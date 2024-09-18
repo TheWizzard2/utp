@@ -11,3 +11,12 @@ class Productor(models.Model):
     # Método toString cuando se necesite ver el objeto instanciado
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
+    
+# Modelo Finca
+class Finca(models.Model):
+    numero_catastro = models.CharField(max_length=50, unique=True, null=False)
+    municipio = models.CharField(max_length=100, null=False)
+    productor = models.ForeignKey(Productor, on_delete=models.CASCADE, related_name='fincas', null=False)
+
+    def __str__(self):
+        return f"Finca {self.numero_catastro} - {self.municipio}"
