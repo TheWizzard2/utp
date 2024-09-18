@@ -65,19 +65,34 @@ class ProductoControlHongo(ProductoControl):
     periodo_carencia = models.IntegerField(null=False)
     nombre_hongo = models.CharField(max_length=100, null=False)
 
+    # Modelo intermedio entre Labor y Producto Control
+    # Normalización para relación * -> *
+    labor = models.ForeignKey(Labor, on_delete=models.CASCADE)
+    producto = models.ForeignKey(ProductoControl, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.producto.nombre_producto} aplicado en {self.labor.descripcion}"
+
 # Modelo Producto Control Plaga
 # Clase hereda de Producto Control
 class ProductoControlPlaga(ProductoControl):
     periodo_carencia = models.IntegerField(null=False)
+
+    # Modelo intermedio entre Labor y Producto Control
+    # Normalización para relación * -> *
+    labor = models.ForeignKey(Labor, on_delete=models.CASCADE)
+    producto = models.ForeignKey(ProductoControl, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.producto.nombre_producto} aplicado en {self.labor.descripcion}"
 
 # Modelo Producto Control Fertilizante
 # Clase hereda de Producto Control
 class ProductoControlFertilizante(ProductoControl):
     fecha_ultima_aplicacion = models.DateField(null=False)
 
-# Modelo intermedio entre Labor y Producto Control
-# Normalización para relación * -> *
-class LaborProductoControl(models.Model):
+    # Modelo intermedio entre Labor y Producto Control
+    # Normalización para relación * -> *
     labor = models.ForeignKey(Labor, on_delete=models.CASCADE)
     producto = models.ForeignKey(ProductoControl, on_delete=models.CASCADE)
 
