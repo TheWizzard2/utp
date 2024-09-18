@@ -14,11 +14,11 @@ tzdata >= 2024.1
 Luego de tener instaladas las librerías necesarias.
 Para ejecutar el proyecto localmente:
 
-## Descargar el repositorio localmente
+# Descargar el repositorio localmente
 
 `git pull https://github.com/TheWizzard2/utp.git`
 
-## Moverse al directorio del proyecto
+# Moverse al directorio del proyecto
 
 `cd /utp`
 
