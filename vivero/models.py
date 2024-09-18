@@ -74,3 +74,12 @@ class ProductoControlPlaga(ProductoControl):
 # Clase hereda de Producto Control
 class ProductoControlFertilizante(ProductoControl):
     fecha_ultima_aplicacion = models.DateField(null=False)
+
+# Modelo intermedio entre Labor y Producto Control
+# Normalización para relación * -> *
+class LaborProductoControl(models.Model):
+    labor = models.ForeignKey(Labor, on_delete=models.CASCADE)
+    producto = models.ForeignKey(ProductoControl, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.producto.nombre_producto} aplicado en {self.labor.descripcion}"
