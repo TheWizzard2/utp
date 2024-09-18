@@ -22,3 +22,14 @@ class Finca(models.Model):
 
     def __str__(self):
         return f"Finca {self.numero_catastro} - {self.municipio}"
+    
+# Modelo Vivero
+class Vivero(models.Model):
+    codigo = models.CharField(max_length=50)
+    tipo_cultivo = models.CharField(max_length=100)
+
+    # Relación 1 a muchos, 1 Finca a muchos viveros
+    finca = models.ForeignKey(Finca, on_delete=models.CASCADE, related_name='viveros')
+
+    def __str__(self):
+        return f"Vivero {self.codigo} - {self.tipo_cultivo}"
