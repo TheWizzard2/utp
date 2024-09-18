@@ -58,3 +58,9 @@ class ProductoControl(models.Model):
     # Desde aquí se heredarán los atributos a otras clases hijas
     class Meta:
         abstract = True
+
+# Modelo Producto Control Hongo
+# Clase hereda de Producto Control
+class ProductoControlHongo(ProductoControl):
+    periodo_carencia = models.IntegerField(null=False)
+    nombre_hongo = models.CharField(max_length=100, null=False)
