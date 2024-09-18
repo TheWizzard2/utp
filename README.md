@@ -14,22 +14,22 @@ tzdata >= 2024.1
 Luego de tener instaladas las librerías necesarias.
 Para ejecutar el proyecto localmente:
 
-# Descargar el repositorio localmente
+## Descargar el repositorio localmente
 
 `git pull https://github.com/TheWizzard2/utp.git`
 
-# Moverse al directorio del proyecto
+## Moverse al directorio del proyecto
 
 `cd /utp`
 
-# Ejecutar todas las migraciones
+## Ejecutar todas las migraciones
 
 `python manage.py migrate`
 
-# Ejecutar las pruebas en la aplicación vivero
+## Ejecutar las pruebas en la aplicación vivero
 
 `python manage.py test vivero`
 
-# Ejecutar el proyecto
+## Ejecutar el proyecto
 
 `python manage.py runserver`
