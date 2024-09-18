@@ -1,5 +1,7 @@
 Requisitos versiones del software:
 
+PostgreSQL >= 16
+
 asgiref >= 3.8.1
 Django >= 5.0.8
 psycopg >= 3.2.2
