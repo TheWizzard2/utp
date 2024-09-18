@@ -46,6 +46,7 @@ class Labor(models.Model):
         return f"Labor {self.descripcion} - {self.fecha}"
     
 # Modelo Producto Control
+# Clase abstracta
 class ProductoControl(models.Model):
     registro_ica = models.CharField(max_length=50, null=False)
     nombre_producto = models.CharField(max_length=100, null=False)
@@ -54,5 +55,6 @@ class ProductoControl(models.Model):
 
     # Ya que el modelo es abstracto no se instancia en BD
     # Se usa como modelo base para extender a otros modelos
+    # Desde aquí se heredarán los atributos a otras clases hijas
     class Meta:
         abstract = True
