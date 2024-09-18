@@ -24,6 +24,10 @@ Para ejecutar el proyecto localmente:
 
 `python manage.py migrate`
 
+# Ejecutar las pruebas en la aplicación vivero
+
+`python manage.py test vivero`
+
 # Ejecutar el proyecto
 
 `python manage.py runserver`
