@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'utp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'vivero', 
+        'USER': 'postgres',
+        'PASSWORD': 'TRAP:/ov7Hjlp/u',
+        'HOST': 'localhost', 
+        'PORT': '5432',
     }
 }
 
