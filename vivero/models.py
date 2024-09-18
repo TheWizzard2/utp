@@ -16,6 +16,8 @@ class Productor(models.Model):
 class Finca(models.Model):
     numero_catastro = models.CharField(max_length=50, unique=True, null=False)
     municipio = models.CharField(max_length=100, null=False)
+
+    # Relación 1 a muchos, 1 Productor a muchas fincas
     productor = models.ForeignKey(Productor, on_delete=models.CASCADE, related_name='fincas', null=False)
 
     def __str__(self):
