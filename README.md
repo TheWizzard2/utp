@@ -16,7 +16,7 @@ Para ejecutar el proyecto localmente:
 
 ## Descargar el repositorio localmente
 
-`git pull https://github.com/TheWizzard2/utp.git`
+`git clone https://github.com/TheWizzard2/utp.git`
 
 ## Moverse al directorio del proyecto
 
